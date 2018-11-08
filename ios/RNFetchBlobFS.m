@@ -119,7 +119,13 @@ NSMutableDictionary *fileStreams = nil;
 }
 
 + (NSString *) getApplicationSupportDir {
-    return [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) firstObject];
+    NSString *applicationSupportDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) firstObject];
+    
+    NSString *appBundleId = [[NSBundle mainBundle] bundleIdentifier];
+    
+    applicationSupportDir = [applicationSupportDir stringByAppendingPathComponent:appBundleId];
+    
+    return applicationSupportDir;
 }
 
 + (NSString *) getTempPath:(NSString*)taskId withExtension:(NSString *)ext {
