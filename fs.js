@@ -31,7 +31,8 @@ const dirs = {
     SDCardDir : RNFetchBlob.SDCardDir,
     SDCardApplicationDir : RNFetchBlob.SDCardApplicationDir,
     MainBundleDir : RNFetchBlob.MainBundleDir,
-    LibraryDir : RNFetchBlob.LibraryDir
+    LibraryDir : RNFetchBlob.LibraryDir,
+    ApplicationSupportDir: RNFetchBlob.ApplicationSupportDir
 }
 
 /**

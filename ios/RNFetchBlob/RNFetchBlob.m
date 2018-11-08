@@ -66,7 +66,8 @@ RCT_EXPORT_MODULE();
     return @{
              @"MainBundleDir" : [RNFetchBlobFS getMainBundleDir],
              @"DocumentDir": [RNFetchBlobFS getDocumentDir],
-             @"CacheDir" : [RNFetchBlobFS getCacheDir]
+             @"CacheDir" : [RNFetchBlobFS getCacheDir],
+             @"ApplicationSupportDir": [RNFetchBlobFS getApplicationSupportDir]
              };
 }
 
@@ -483,6 +484,7 @@ RCT_EXPORT_METHOD(getEnvironmentDirs:(RCTResponseSenderBlock) callback)
     callback(@[
                [RNFetchBlobFS getDocumentDir],
                [RNFetchBlobFS getCacheDir],
+               [RNFetchBlobFS getApplicationSupportDir]
                ]);
 }
 
