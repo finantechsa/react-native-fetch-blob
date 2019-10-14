@@ -58,6 +58,7 @@
 + (NSString *) getTempPath:(NSString*)taskId withExtension:(NSString *)ext;
 + (NSString *) getPathOfAsset:(NSString *)assetURI;
 + (NSString *) getPathForAppGroup:(NSString *)groupName;
++ (NSString *) getApplicationSupportDir;
 + (void) getPathFromUri:(NSString *)uri completionHandler:(void(^)(NSString * path, ALAssetRepresentation *asset)) onComplete;
 
 // fs methods
