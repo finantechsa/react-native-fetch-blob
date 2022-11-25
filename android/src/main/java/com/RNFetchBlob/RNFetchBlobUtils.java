@@ -7,7 +7,6 @@ import com.facebook.react.modules.core.DeviceEventManagerModule;
 import java.security.MessageDigest;
 import java.security.cert.CertificateException;
 
-import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocketFactory;
@@ -80,13 +79,7 @@ public class RNFetchBlobUtils {
 
             OkHttpClient.Builder builder = client.newBuilder();
             builder.sslSocketFactory(sslSocketFactory);
-            builder.hostnameVerifier(new HostnameVerifier() {
-                @Override
-                public boolean verify(String hostname, SSLSession session) {
-                    return true;
-                }
-            });
-
+           
             return builder;
         } catch (Exception e) {
             throw new RuntimeException(e);
